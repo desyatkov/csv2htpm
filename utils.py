@@ -15,3 +15,7 @@ def get_overall_names(dict_val, count=5, score_field_name='Q2_OVERALL_1'):
         overall_names[index + 1] = dict_val[key][0].replace(score_field_name+':', '')
     return overall_names
 
+
+def round_of_rating(number):
+    return round(number * 2) / 2
+

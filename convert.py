@@ -6,10 +6,11 @@ import pandas as pd
 import utils
 import pprint
 import math
+import numpy as np
 
 BRAND_PREFIX_FIELD = 'S5C'
 SCORE_VALUES_NAME = 'Q2_OVERALL_1'
-
+SCORE_WEIGHTS = [10, 10, 20, 20, 40]
 
 # GET FILE WITH FIELDS DATA(brands, score values)
 df_brands = pd.read_csv('csvFiles/fields-real.csv', delimiter=',', index_col=0, usecols=['Variable Name', 'Label'])
@@ -25,9 +26,11 @@ overall_fields_name = utils.get_overall_names(brands_split, score_field_name=SCO
 result_data = {}
 BRAND_3_TAGS = ('BRAND_1_TAG', 'BRAND_2_TAG', 'BRAND_3_TAG')
 
+
 # __OVERALL 5 values
 def get_overall_id(brand_id=0, overall_id=0):
     return "Q2_OVERALL_%s_%s" % (brand_id, overall_id)
+
 
 # __USER PERMANENT FIELDS
 
@@ -39,11 +42,12 @@ user_data.info(memory_usage='deep')
 
 pp = pprint.PrettyPrinter(indent=4)
 
-for user_item in user_data_dict:                # row__review
-    for tag in BRAND_3_TAGS:                    # brand
+for user_item in user_data_dict:  # row__review
+    for tag in BRAND_3_TAGS:  # brand
         item = {}
         overall = {}
-        for fields in PERMANENT_FIELDS:         # fields
+        score_list = [];
+        for fields in PERMANENT_FIELDS:  # fields
             item[fields] = user_item[fields]
             item['overall'] = {}
 
@@ -52,6 +56,13 @@ for user_item in user_data_dict:                # row__review
                 overall_field_name = get_overall_id(int(user_item[tag]), inx)
                 value_list = user_item[overall_field_name].split(' - ')
                 item['overall'][inx] = {'value': value_list[0], 'textual': value_list[1]}
+                score_list.append(int(value_list[0]))
+
+            item['overall']['overall_weights'] = SCORE_WEIGHTS
+            item['overall']['overall_list'] = score_list
+            item['overall']['overall_average'] = np.average(score_list)
+            item['overall']['overall_average_weight'] = np.average(score_list, weights=SCORE_WEIGHTS)
+            item['overall']['overall_average_score'] = utils.round_of_rating(item['overall']['overall_average'])
 
             result_data.setdefault(int(user_item[tag]), []).append(item)
 

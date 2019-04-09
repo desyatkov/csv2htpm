@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d267b3d2-a3eb-4292-b920-3dac1e387b32" name="Default Changelist" comment="small fixes">
-      <change afterPath="$PROJECT_DIR$/generate_html.py" afterDir="false" />
+    <list default="true" id="d267b3d2-a3eb-4292-b920-3dac1e387b32" name="Default Changelist" comment="add generate html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/convert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +14,15 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/csv2hmlt$avarage.coverage" NAME="avarage Coverage Results" MODIFIED="1554798031747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/csv2hmlt$convert.coverage" NAME="convert Coverage Results" MODIFIED="1554840749361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/csv2hmlt$convert.coverage" NAME="convert Coverage Results" MODIFIED="1554845345547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/convert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="282">
+              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding>
                 <element signature="e#19#38#0" expanded="true" />
               </folding>
@@ -32,31 +31,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generate_html.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="59" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/review_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="236">
+              <caret line="79" column="45" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -75,13 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Q2_OVERALL_4_1</find>
-      <find>tag</find>
-      <find>Q2_OVERALL_86_1</find>
-      <find>'value': '5'</find>
-      <find>user_data_dict</find>
-      <find>result_data</find>
-      <find>BRAND_3_TAGS</find>
       <find>PERMANENT_FIELDS</find>
       <find>SCORE_WEIGHTS</find>
       <find>BRAND_PREFIX_FIELD</find>
@@ -89,7 +60,6 @@
       <find>np</find>
       <find>val_average</find>
       <find>per_product_avg_list</find>
-      <find>per_product_avg_rating</find>
       <find>three_brands</find>
       <find>get_overall_id</find>
       <find>user_item[tag]</find>
@@ -105,6 +75,14 @@
       <find>Simon</find>
       <find>Payout speed</find>
       <find>j2_env</find>
+      <find>dict_filtering</find>
+      <find>brands_filtered</find>
+      <find>per_product_avg_rating</find>
+      <find>key</find>
+      <find>get_av</find>
+      <find>val_list</find>
+      <find>get_avg_score</find>
+      <find>prod_length</find>
     </findStrings>
     <replaceStrings>
       <replace>permanent_fields</replace>
@@ -127,20 +105,20 @@
         <option value="$PROJECT_DIR$/dict_filtering.py" />
         <option value="$PROJECT_DIR$/xml2csv.py" />
         <option value="$PROJECT_DIR$/avarage.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/templates/review_list.html" />
         <option value="$PROJECT_DIR$/csvFiles/data.csv" />
         <option value="$PROJECT_DIR$/William Hill Sports.html" />
         <option value="$PROJECT_DIR$/result/888 Casino.html" />
         <option value="$PROJECT_DIR$/generate_html.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/convert.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="77" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="444" />
     <option name="y" value="23" />
-    <option name="width" value="1363" />
+    <option name="width" value="996" />
     <option name="height" value="819" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -151,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,7 +141,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Course" />
     </panes>
   </component>
@@ -280,7 +258,8 @@
       <workItem from="1554235899350" duration="629000" />
       <workItem from="1554706390310" duration="345000" />
       <workItem from="1554706826276" duration="41787000" />
-      <workItem from="1554823473928" duration="11444000" />
+      <workItem from="1554823473928" duration="12794000" />
+      <workItem from="1554842172435" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="add rating calc">
       <created>1554824640661</created>
@@ -296,22 +275,29 @@
       <option name="project" value="LOCAL" />
       <updated>1554826749979</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add generate html">
+      <created>1554840804878</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554840804878</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56196000" />
+    <option name="totallyTimeSpent" value="60094000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="77" y="23" width="1363" height="819" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="819" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18622255" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.12804006" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287483" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.44704264" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.30536452" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,14 +306,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32737276" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4995417" weight="0.69876206" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4995417" weight="0.38789546" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32866243" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="620" height="677" id="Documentation" order="5" weight="0.12017167" />
+      <window_info anchor="right" x="0" y="0" width="620" height="677" id="Documentation" order="5" weight="0.11960636" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +322,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add rating calc" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="add generate html" />
+    <option name="LAST_COMMIT_MESSAGE" value="add generate html" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/pandas/core/indexing.py">
@@ -380,30 +367,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/review_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/William Hill Sports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/William Hill Sports.html" />
     <entry file="file://$PROJECT_DIR$/result/PaddyPower Poker.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -452,14 +416,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml2csv.py">
+    <entry file="file://$PROJECT_DIR$/result/William Hill Sports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="103">
+          <caret line="1385" column="9" lean-forward="true" selection-start-line="1385" selection-start-column="9" selection-end-line="1385" selection-end-column="9" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/10BET Casino.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2060" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generate_html.py">
@@ -472,10 +438,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/review_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml2csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dataframe.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="79" column="45" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/convert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="282">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
           <folding>
             <element signature="e#19#38#0" expanded="true" />
           </folding>

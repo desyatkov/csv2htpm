@@ -63,7 +63,7 @@ def get_records(user_data_dict, three_brands=(), permanent_fields=(), weight=[20
     return result_data
 
 
-def get_avg_score(records_collection_list):
+def get_avg_score(records_collection_list, brands_filtered):
     per_product_avg_rating = {}
     for key, value in records_collection_list.items():
         per_product_avg_row = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
@@ -72,14 +72,14 @@ def get_avg_score(records_collection_list):
         for item in value:
             for idx in range(1, 6):
                 per_product_avg_row[idx] += int(item['overall'][idx]['value'])
-
         for x, y in per_product_avg_row.items():
             per_product_avg_row[x] = round((y / list_length) * 2, 1)
 
         per_product_avg_rating[key] = per_product_avg_row
 
         per_product_avg_rating[key]['val_list'] = list(per_product_avg_row.values())
-        per_product_avg_rating[key]['prod_length'] = list_length
-        per_product_avg_rating[key]['val_average'] = round(np.average(per_product_avg_rating[key]['val_list']), 1)
+        per_product_avg_rating[key]['rev_length'] = list_length
+        per_product_avg_rating[key]['avg_score'] = round(np.average(per_product_avg_rating[key]['val_list']), 1)
+        per_product_avg_rating[key]['brand_name'] = brands_filtered[key]
 
     return per_product_avg_rating

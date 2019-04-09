@@ -13,7 +13,10 @@ df_brands = pd.read_csv('csvFiles/fields-real.csv', delimiter=',', index_col=0, 
 brands_records = df_brands.to_dict('split')
 brands_split = dict(zip(brands_records['index'], brands_records['data']))
 
+# brand code and name ex: {1: 888 ...}
 brands_filtered = utils.dict_filtering(brands_split, filter_val=BRAND_PREFIX_FIELD)
+
+# Score id and name ex: {   1: 'Ease of Use' ...}
 overall_fields_name = utils.get_overall_names(brands_split, score_field_name=SCORE_VALUES_NAME)
 
 # GET USER DATA
@@ -28,13 +31,20 @@ PERMANENT_FIELDS = ("ResponseId", "Gender", "Age", "FIRST_NAME", "COUNTY", "AGE_
 # COLLECTED DATA
 records_collection_list = utils.get_records(user_data_dict, BRAND_3_TAGS, PERMANENT_FIELDS, SCORE_WEIGHTS)
 
-per_product_avg_rating = utils.get_avg_score(records_collection_list)
+# Each brand avg score
+avg_rating_per_brand = utils.get_avg_score(records_collection_list, brands_filtered)
 
 pp = pprint.PrettyPrinter(indent=4)
-print(records_collection_list.keys())
+# print(records_collection_list.keys())
 # pp.pprint(records_collection_list[86])
-# pp.pprint(overall_fields_name)
-# pp.pprint(brands_filtered)
+# pp.pprint(avg_rating_per_brand)
+
+df = pd.DataFrame(avg_rating_per_brand).drop(index='val_list')
+df_transposed = df.T
+
+export_csv = df_transposed.to_csv(r'export_dataframe.csv', header=True, index=True)
+
+print(df_transposed)
 
 generate_html(records_collection_list, brands_filtered)
 

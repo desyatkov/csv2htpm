@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d267b3d2-a3eb-4292-b920-3dac1e387b32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avarage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv2hmlt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv2hmlt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/convert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csvFiles/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csvFiles/data.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,18 +15,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/csv2hmlt$convert.coverage" NAME="convert Coverage Results" MODIFIED="1554764849645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/csv2hmlt$avarage.coverage" NAME="avarage Coverage Results" MODIFIED="1554768381490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/csv2hmlt$convert.coverage" NAME="convert Coverage Results" MODIFIED="1554765147345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/convert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+            <state relative-caret-position="-143">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#19#67#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/avarage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -86,14 +99,14 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/csvFiles/data.csv" />
         <option value="$PROJECT_DIR$/convert.py" />
+        <option value="$PROJECT_DIR$/avarage.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="52" />
+    <option name="y" value="250" />
     <option name="width" value="1440" />
-    <option name="height" value="819" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -111,11 +124,6 @@
             <path>
               <item name="csv2hmlt" type="b2602c69:ProjectViewProjectNode" />
               <item name="csv2hmlt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csv2hmlt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csv2hmlt" type="462c0819:PsiDirectoryNode" />
-              <item name="csvFiles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -147,7 +155,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.avarage">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="csv2hmlt" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="avarage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="csv2hmlt" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/avarage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="convert" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="csv2hmlt" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +224,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.avarage" />
         <item itemvalue="Python.convert" />
       </list>
     </recent_temporary>
@@ -190,24 +243,23 @@
       <workItem from="1554234085165" duration="1715000" />
       <workItem from="1554235899350" duration="629000" />
       <workItem from="1554706390310" duration="345000" />
-      <workItem from="1554706826276" duration="26334000" />
+      <workItem from="1554706826276" duration="28140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29299000" />
+    <option name="totallyTimeSpent" value="31105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="52" width="1440" height="819" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="250" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1602289" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287483" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4099037" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39889959" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -216,7 +268,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004583" side_tool="true" weight="0.32871014" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4995417" weight="0.4016506" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3287483" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32866243" />
+      <window_info active="true" anchor="right" x="0" y="0" width="620" height="677" id="Documentation" visible="true" weight="0.24034335" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -314,11 +367,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/convert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+        <state relative-caret-position="-143">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#19#67#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/avarage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

@@ -38,7 +38,6 @@ user_data_dict = user_data.to_dict('records')
 user_data.info(memory_usage='deep')
 
 pp = pprint.PrettyPrinter(indent=4)
-# pp.pprint(brands_filtered)
 
 for user_item in user_data_dict:                # row__review
     for tag in BRAND_3_TAGS:                    # brand
@@ -53,7 +52,6 @@ for user_item in user_data_dict:                # row__review
                 overall_field_name = get_overall_id(int(user_item[tag]), inx)
                 value_list = user_item[overall_field_name].split(' - ')
                 item['overall'][inx] = {'value': value_list[0], 'textual': value_list[1]}
-                print(value_list)
 
             result_data.setdefault(int(user_item[tag]), []).append(item)
 

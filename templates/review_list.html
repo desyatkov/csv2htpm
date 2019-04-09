@@ -1,0 +1,25 @@
+<ul>
+    {% for dict_item in parent_dict %}
+
+    {% if not loop.index is divisibleby(2) %}
+    <section class="wrap">
+        {% endif %}
+            <li class="{{ loop.cycle('odd', 'even') }}-{{loop.index}}">
+                <div>{{ dict_item.FIRST_NAME }}</div>
+                <div>{{ dict_item.Regions }}</div>
+                <div>{{ dict_item.overall['overall_average_score'] }}</div>
+
+                <div>{{ dict_item.text_pros }}</div>
+                <div>{{ dict_item.text_cons }}</div>
+            </li>
+            {% if loop.last and not loop.index is divisibleby(2) %}
+                <li class="last">LAST</li>
+            {% endif %}
+        {% if loop.index is divisibleby(2) %}
+            </section>
+        {% endif %}
+        {% if loop.last and not loop.index is divisibleby(2) %}
+            </section>
+        {% endif %}
+    {% endfor %}
+</ul>

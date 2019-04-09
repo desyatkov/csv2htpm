@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 import utils
 import pprint
+from generate_html import generate_html
 
 BRAND_PREFIX_FIELD = 'S5C'
 SCORE_VALUES_NAME = 'Q2_OVERALL_1'
@@ -31,5 +31,10 @@ records_collection_list = utils.get_records(user_data_dict, BRAND_3_TAGS, PERMAN
 per_product_avg_rating = utils.get_avg_score(records_collection_list)
 
 pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(brands_filtered)
-# pp.pprint(per_product_avg_rating)
+print(records_collection_list.keys())
+# pp.pprint(records_collection_list[86])
+# pp.pprint(overall_fields_name)
+# pp.pprint(brands_filtered)
+
+generate_html(records_collection_list, brands_filtered)
+

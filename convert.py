@@ -37,9 +37,12 @@ avg_rating_per_brand = utils.get_avg_score(records_collection_list, brands_filte
 pp = pprint.PrettyPrinter(indent=4)
 # print(records_collection_list.keys())
 # pp.pprint(records_collection_list[86])
-# pp.pprint(avg_rating_per_brand)
+# pp.pprint({inx: overall_fields_name[inx] for inx in range(1, 6)})
 
-df = pd.DataFrame(avg_rating_per_brand).drop(index='val_list')
+df = pd.DataFrame(avg_rating_per_brand)\
+    .drop(index='val_list')\
+    .rename(index={inx: overall_fields_name[inx] for inx in range(1, 6)})
+
 df_transposed = df.T
 
 export_csv = df_transposed.to_csv(r'export_dataframe.csv', header=True, index=True)

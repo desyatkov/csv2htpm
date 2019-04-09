@@ -24,21 +24,29 @@ def round_of_rating(number):
     return round(number * 2) / 2
 
 
-def get_overall_id(brand_id=0, overall_id=0):
-    return "Q2_OVERALL_%s_%s" % (brand_id, overall_id)
-
-
 def get_records(user_data_dict, three_brands=(), permanent_fields=(), weight=[20, 20, 20, 20, 20]):
+    def get_overall_id(brand_id=0, overall_id=0):
+        return "Q2_OVERALL_%s_%s" % (brand_id, overall_id)
+
+    def get_text_key(brand_id):
+        return ["Q3_%s" % int(brand_id), "Q4_%s" % int(brand_id)]
+
     result_data = {}
-    for user_item in user_data_dict:  # row__review
-        for tag in three_brands:  # brand
+    for user_item in user_data_dict:
+        for tag in three_brands:
             item = {}
             score_list = []
-            for fields in permanent_fields:  # fields
-                item[fields] = user_item[fields]
-                item['overall'] = {}
 
             if not math.isnan(float(user_item[tag])):
+                text_keys = get_text_key(user_item[tag])
+
+                for fields in permanent_fields:
+                    item[fields] = user_item[fields]
+                    item['overall'] = {}
+
+                item['text_pros'] = user_item[text_keys[0]]
+                item['text_cons'] = user_item[text_keys[1]]
+
                 for inx in range(1, 6):
                     overall_field_name = get_overall_id(int(user_item[tag]), inx)
                     value_list = user_item[overall_field_name].split(' - ')

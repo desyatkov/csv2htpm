@@ -24,7 +24,7 @@ user_data = pd.read_csv('csvFiles/data-real.csv', delimiter=',')
 user_data_dict = user_data.to_dict('records')
 user_data.info(memory_usage='deep')
 
-SCORE_WEIGHTS = [10, 10, 20, 20, 40]
+SCORE_WEIGHTS = [20, 20, 20, 20, 20]
 BRAND_3_TAGS = ('BRAND_1_TAG', 'BRAND_2_TAG', 'BRAND_3_TAG')
 PERMANENT_FIELDS = ("ResponseId", "Gender", "Age", "FIRST_NAME", "COUNTY", "AGE_TAG", "Regions")
 

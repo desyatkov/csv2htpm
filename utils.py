@@ -3,6 +3,7 @@ import numpy as np
 
 
 def dict_filtering(dict_val, filter_val='S5C'):
+    """ Filtering core dictionary by val"""
     filtered_dict = {}
     for key, value in dict_val.items():
         key_dict = key.replace(filter_val + "_", '')

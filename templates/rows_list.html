@@ -1,0 +1,63 @@
+<div class="comment">
+    <div class="comment__title">Player Reviews What do other players think about {product_display_name}?</div>
+
+    <div class="comment__list">
+        {% for dict_item in parent_dict %}
+
+        {% if not loop.index is divisibleby(2) %}
+        <div class="comment__pair {{'hidden' if loop.index >= 4 }}">
+        {% endif %}
+
+            <div class="comment__item {{'comment__item--minimized' if dict_item.text_pros|length_str(dict_item.text_pros, 140) }}">
+                <div class="comment__item__top">
+                    <div class="comment__item__image">
+                        <img alt=""
+                             src="http://boost-assets-production.s3-website-us-east-1.amazonaws.com/assets/general/9743/profile.svg"/>
+                    </div>
+
+                    <div class="comment__item__cred">
+                        <div class="comment__item__name">{{ dict_item.FIRST_NAME }}</div>
+                        <div class="comment__item__geo">{{ dict_item.Regions }}</div>
+                    </div>
+
+                    <div class="comment__item__rating">
+                        <svg class="icon">
+                            <use xlink:href="#stars-{{ dict_item.overall['overall_average_score'] | replace_dot_lodash }}-star" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="comment__item__bottom">
+                    <div class="comment__item__brief">
+                        <div class="comment__item__brief__pros">
+                            <span class='comment__item__brief--strong'>Pros:</span>
+                            <span>{{dict_item.text_pros}}</span>
+                        </div>
+                        <div class="comment__item__brief__cons">
+                            <span class='comment__item__brief--strong'>Cons:</span>
+                            <span>{{ dict_item.text_cons }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% if dict_item.text_pros|length_str(dict_item.text_pros, 140) %}
+                <div class="comment__item__link"><span>Read full review</span></div>
+                {% endif %}
+            </div>
+
+            {% if loop.last and not loop.index is divisibleby(2) %}
+            <div class="comment__item comment__item__top empty"></div>
+            {% endif %}
+
+        {% if loop.index is divisibleby(2) %}
+        </div>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+    {% if parent_dict | length > 4 %}
+    <div class='more-reviews'>
+        <span>Load More Reviews</span>
+    </div>
+    {% endif %}
+</div>

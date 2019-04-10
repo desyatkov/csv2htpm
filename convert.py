@@ -4,6 +4,7 @@ import pandas as pd
 import utils
 import pprint
 from generate_html import generate_html
+from generate_html import generate_html2
 
 BRAND_PREFIX_FIELD = 'S5C'
 SCORE_VALUES_NAME = 'Q2_OVERALL_1'
@@ -20,7 +21,7 @@ brands_filtered = utils.dict_filtering(brands_split, filter_val=BRAND_PREFIX_FIE
 overall_fields_name = utils.get_overall_names(brands_split, score_field_name=SCORE_VALUES_NAME)
 
 # GET USER DATA
-user_data = pd.read_csv('csvFiles/data-real.csv', delimiter=',')
+user_data = pd.read_csv('csvFiles/data.csv', delimiter=',')
 user_data_dict = user_data.to_dict('records')
 user_data.info(memory_usage='deep')
 
@@ -36,7 +37,7 @@ avg_rating_per_brand = utils.get_avg_score(records_collection_list, brands_filte
 
 pp = pprint.PrettyPrinter(indent=4)
 # print(records_collection_list.keys())
-# pp.pprint(records_collection_list[86])
+# pp.pprint(records_collection_list)
 # pp.pprint({inx: overall_fields_name[inx] for inx in range(1, 6)})
 
 df = pd.DataFrame(avg_rating_per_brand)\
@@ -51,3 +52,4 @@ print(df_transposed)
 
 generate_html(records_collection_list, brands_filtered)
 
+# generate_html2(records_collection_list)

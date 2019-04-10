@@ -1,0 +1,10 @@
+<ul>
+    {% for dict_item in parent_dict  %}
+        <li class="{{ loop.cycle('odd', 'even') }}-{{loop.index}}">
+            <div><strong style="color:tomato">{{ dict_item.FIRST_NAME }}</strong> - {{ dict_item.Regions }} - {{dict_item.Regions}}</div>
+            <div><strong style="color:tomato">pros: </strong>{{ dict_item.text_pros }}</div>
+            <div><strong style="color:tomato">cons: </strong>{{ dict_item.text_cons }}</div>
+        </li>
+    <hr>
+    {% endfor %}
+</ul>

@@ -4,22 +4,28 @@
     {% if not loop.index is divisibleby(2) %}
     <section class="wrap">
         {% endif %}
-            <li class="{{ loop.cycle('odd', 'even') }}-{{loop.index}}">
-                <div>{{ dict_item.FIRST_NAME }}</div>
-                <div>{{ dict_item.Regions }}</div>
-                <div>{{ dict_item.overall['overall_average_score'] }}</div>
+        <li class="{{ loop.cycle('odd', 'even') }}-{{loop.index}} {{'has-success' if dict_item.text_pros|length_str(dict_item.text_pros, 140) }}">
+            <div>{{ dict_item.FIRST_NAME }}</div>
+            <div>{{ dict_item.Regions }}</div>
+            <div>score: {{ dict_item.overall['overall_average_score'] | replace_dot_lodash }}</div>
 
-                <div>{{ dict_item.text_pros }}</div>
-                <div>{{ dict_item.text_cons }}</div>
-            </li>
-            {% if loop.last and not loop.index is divisibleby(2) %}
-                <li class="last">LAST</li>
+            <div>1-{{dict_item.text_pros|length_str(dict_item.text_pros, 140)}}</div>
+            <div>Pros: {{dict_item.text_pros}}</div>
+            <div>Cons: {{ dict_item.text_cons }}</div>
+
+            {% if dict_item.text_pros|length_str(dict_item.text_pros, 140) %}
+            <div>SHOW MORE</div>
             {% endif %}
-        {% if loop.index is divisibleby(2) %}
-            </section>
-        {% endif %}
+        </li>
         {% if loop.last and not loop.index is divisibleby(2) %}
-            </section>
+        <li class="last">LAST</li>
         {% endif %}
+
+        {% if loop.index is divisibleby(2) %}
+        </section>
+        {% endif %}
+    {% if loop.last and not loop.index is divisibleby(2) %}
+    </section>
+    {% endif %}
     {% endfor %}
 </ul>

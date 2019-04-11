@@ -5,6 +5,7 @@ import utils
 import pprint
 from generate_html import generate_html
 from generate_html import generate_html2
+import numpy as np
 
 BRAND_PREFIX_FIELD = 'S5C'
 SCORE_VALUES_NAME = 'Q2_OVERALL_1'
@@ -21,8 +22,11 @@ brands_filtered = utils.dict_filtering(brands_split, filter_val=BRAND_PREFIX_FIE
 overall_fields_name = utils.get_overall_names(brands_split, score_field_name=SCORE_VALUES_NAME)
 
 # GET USER DATA
-user_data = pd.read_csv('csvFiles/data.csv', delimiter=',')
-user_data_dict = user_data.to_dict('records')
+user_data = pd.read_csv('csvFiles/data-real.csv', delimiter=',')
+df_replace = pd.DataFrame(user_data)
+
+user_data_dict = df_replace.to_dict('records')
+
 user_data.info(memory_usage='deep')
 
 SCORE_WEIGHTS = [20, 20, 20, 20, 20]

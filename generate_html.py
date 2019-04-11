@@ -1,7 +1,9 @@
 from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup as bs
 import os
+import pprint
 
+pp = pprint.PrettyPrinter(indent=4)
 
 def generate_html(records_collection_list, brands_filtered):
     os.makedirs("result", exist_ok=True)
@@ -18,6 +20,11 @@ def generate_html(records_collection_list, brands_filtered):
         cons_str = str(cons)
         return len(pros_str.strip() + cons_str.strip()) > num
 
+    def length_str_val(pros, cons):
+        pros_str = str(pros)
+        cons_str = str(cons)
+        return '%s --- %s' % (len(pros_str.strip() + cons_str.strip()), len(pros_str.strip() + cons_str.strip()) > 140)
+
     def replace_dot_lodash(value):
         if not isinstance(value, str):
             value = str(value)
@@ -26,16 +33,23 @@ def generate_html(records_collection_list, brands_filtered):
 
     j2_env.filters['length_str'] = length_str
     j2_env.filters['replace_dot_lodash'] = replace_dot_lodash
+    j2_env.filters['length_str_val'] = length_str_val
 
     for record_key, record_val in records_collection_list.items():
         brands_name = brands_filtered[record_key]
-        output_from_parsed_template = j2_env.get_template('rows_list.html').render(parent_dict=record_val)
+
+        sorted_records = sorted(record_val, key=lambda k: max(len(str(k['text_cons'])), len(str(k['text_pros']))), reverse=True)
+
+        output_from_parsed_template = j2_env.get_template('rows_list.html').render(parent_dict=sorted_records)
 
         soup = bs(output_from_parsed_template, 'html.parser')
         pretty_html = soup.prettify()
 
         with open(os.path.join(result_dir, "%s.html" % brands_name), "w") as fh:
             fh.write(pretty_html)
+
+    print(records_collection_list[86][0]['text_cons'])
+    print(records_collection_list[86][0]['text_pros'])
 
 
 def generate_html2(records_collection_list):

@@ -8,7 +8,7 @@
         <div class="comment__pair {{'hidden' if loop.index >= 4 }}">
         {% endif %}
 
-            <div class="comment__item {{'comment__item--minimized' if dict_item.text_pros|length_str(dict_item.text_pros, 140) }}">
+            <div class="comment__item {{'comment__item--minimized' if dict_item.text_pros|length_str(dict_item.text_cons, 140) }}">
                 <div class="comment__item__top">
                     <div class="comment__item__image">
                         <img alt=""
@@ -39,7 +39,8 @@
                         </div>
                     </div>
                 </div>
-                {% if dict_item.text_pros|length_str(dict_item.text_pros, 140) %}
+
+                {% if dict_item.text_pros|length_str(dict_item.text_cons, 140) %}
                 <div class="comment__item__link"><span>Read full review</span></div>
                 {% endif %}
             </div>

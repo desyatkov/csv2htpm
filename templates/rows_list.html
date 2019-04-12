@@ -1,14 +1,14 @@
-<div class="comment">
+<div class="comment" id="comment__header">
     <div class="comment__title">Player Reviews What do other players think about {product_display_name}?</div>
 
-    <div class="comment__list">
+    <div class="comment__list hidden-toggle">
         {% for dict_item in parent_dict %}
 
         {% if not loop.index is divisibleby(2) %}
         <div class="comment__pair {{'hidden' if loop.index >= 4 }}">
         {% endif %}
 
-            <div class="comment__item {{'comment__item--minimized' if dict_item.text_pros|length_str(dict_item.text_cons, 140) }}">
+            <div class="comment__item {{'comment__item--minimized' if dict_item.text_pros|length_str(dict_item.text_cons, 140) }}" data-parent-rev-id="{{loop.index}}">
                 <div class="comment__item__top">
                     <div class="comment__item__image">
                         <img alt=""
@@ -41,7 +41,8 @@
                 </div>
 
                 {% if dict_item.text_pros|length_str(dict_item.text_cons, 140) %}
-                <div class="comment__item__link"><span>Read full review</span></div>
+                <div class="comment__item__link"><span class="more_rev" data-rev-id="{{loop.index}}">Read full review</span></div>
+                <div class="comment__item__link"><span class="less_rev" data-rev-id="{{loop.index}}">Show less</span></div>
                 {% endif %}
             </div>
 
@@ -57,8 +58,11 @@
     </div>
 
     {% if parent_dict | length > 4 %}
-    <div class='more-reviews'>
-        <span>Load More Reviews</span>
+    <div class='toggle-reviews toggle-reviews__more'>
+        <span id="load-reviews">Load More Reviews</span>
+    </div>
+    <div class='toggle-reviews toggle-reviews__less'>
+        <span id="less-reviews">Show Less Reviews</span>
     </div>
     {% endif %}
 </div>
